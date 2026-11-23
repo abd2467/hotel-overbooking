@@ -1,0 +1,13 @@
+# Data handling
+pandas
+numpy
+duckdb
+# Charts
+matplotlib
+# Statistics and models
+scipy
+scikit-learn
+lifelines
+# Notebooks and dashboard
+jupyter
+streamlit

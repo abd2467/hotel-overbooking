@@ -1,0 +1,20 @@
+# Raw data: never committed. Link to the official source instead (see DATA_REGISTER.md).
+data/raw/*
+!data/raw/.gitkeep
+
+# Python environment and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Editor and OS clutter
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.streamlit/secrets.toml
