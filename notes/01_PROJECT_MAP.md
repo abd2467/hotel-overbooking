@@ -65,4 +65,12 @@ hotel-overbooking/
 6. Commit and push
 
 ## The working loop for every step
-Concept (Claude explains) → Spec (I write the agent prompt, Claude reviews) → Generate (agent codes) → Verify (I check numbers) → Explain back (I explain, Claude corrects) → Document (I draft, we polish, then file).
+Concept (Claude explains) → Spec (I write the agent prompt, Claude reviews) → Generate (agent codes on a branch) → Verify (I check numbers) → Review (pull request; CodeRabbit comments; I decide which comments to act on) → Explain back (I explain, Claude corrects) → Document (I draft, we polish, then file) → Merge.
+
+## Tools
+| Tool | Role |
+|---|---|
+| Claude (chat) | Tutor, plan, prompt review, doc polishing |
+| Claude Code | Coding agent: writes and runs code on a branch |
+| CodeRabbit | Automated reviewer on every pull request (config: `.coderabbit.yaml`) |
+| Floorplan | Map of the project (blueprint now, code map once built) |

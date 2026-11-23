@@ -12,6 +12,11 @@ I am learning data analytics while building this project. I must be able to expl
 - If something is ambiguous, ask me instead of guessing.
 - End each task with a short summary: files changed, what I should verify, and any assumption you made.
 
+## Git workflow
+- Never commit directly to main. Each step gets its own branch, named like `day1-load-data`.
+- Small commits with clear messages saying what changed and why.
+- When a step is done, push the branch and open a pull request so CodeRabbit can review it. Do not merge it yourself.
+
 ## Data rules
 - Never commit anything in data/raw/. Raw data is downloaded from the source in DATA_REGISTER.md.
 - Never invent numbers. Every figure in a write-up must come from code in this repo.

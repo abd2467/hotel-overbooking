@@ -1,0 +1,53 @@
+# CodeRabbit: AI review on every pull request.
+# Reference: https://docs.coderabbit.ai/reference/configuration
+language: "en-US"
+tone_instructions: "The author is learning data analytics. For each issue, explain in plain words why it matters and how to fix it."
+early_access: false
+
+reviews:
+  profile: "assertive"          # more feedback, because the goal is learning
+  high_level_summary: true
+  review_status: true
+  poem: false
+  collapse_walkthrough: true
+
+  path_filters:
+    - "!data/**"                # raw and processed data are never reviewed
+    - "!floorplan/**"
+
+  path_instructions:
+    - path: "src/**/*.py"
+      instructions: |
+        This is analysis code for a hotel overbooking decision.
+        - Flag any use of columns only known after the stay: reservation_status, reservation_status_date, assigned_room_type, booking_changes. This is data leakage.
+        - Check that cancellation rates use the right denominator (all bookings for that hotel).
+        - Check that every calculation prints a sanity check, as AGENTS.md requires.
+        - Flag hard-coded numbers that should come from the data.
+        - Prefer simple, readable pandas over clever code.
+    - path: "notebooks/**"
+      instructions: |
+        Check that every conclusion written in a markdown cell matches the output shown above it.
+        Flag figures that are stated but not computed in the notebook.
+        For causal claims about deposits, check that selection bias is acknowledged.
+    - path: "app/**"
+      instructions: |
+        The dashboard must read only the small result files in data/processed/, never the raw bookings.
+        Check that every number shown on screen is labelled with its unit and what it assumes.
+    - path: "**/*.md"
+      instructions: |
+        Every figure in a write-up must come from code in this repo. Flag numbers with no source.
+
+  auto_review:
+    enabled: true
+    drafts: false
+
+  tools:
+    ruff:
+      enabled: true             # Python linter
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  code_guidelines:
+    enabled: true
