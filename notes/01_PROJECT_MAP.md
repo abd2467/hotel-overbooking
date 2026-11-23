@@ -48,13 +48,15 @@ hotel-overbooking/
 
 | Day | Question answered | Output | Skill learned |
 |---|---|---|---|
-| 1 | Is my data the same data the paper describes? | Rows and cancellation rates match | Setup, pandas loading, verification |
-| 2 | What does the data look like, and what is wrong with it? | Clean data, deposit check, nightly table | Cleaning, groupby, SQL, charts |
-| 3 | When do bookings cancel? | Survival curves by lead time and channel | Survival analysis |
-| 4 | Do deposits reduce cancellations, or only look like it? | Matched comparison with caveats | Causal inference |
-| 5 | How many rooms to overbook? | Policy vs flat 5% rule, in money | Newsvendor, Monte Carlo simulation |
-| 6 | How sure are we? Can a manager use it? | Sensitivity charts, live dashboard | Sensitivity analysis, Streamlit, deployment |
-| 7 | Can someone act on it? | Memo, README, LinkedIn post | Decision writing |
+| 1 | Is my data the same data the paper describes? | Rows and cancellation rates match; problem statement in README | Setup, pandas loading, verification |
+| 2 | What does the data look like, and what is wrong with it? | Clean data, deposit check, nightly table, capacity estimate, `SQL_LOG.md` | Cleaning, groupby, SQL, charts |
+| 3 | When do bookings cancel? | Survival curves by lead time and channel (present-bias test) | Survival analysis |
+| 4 | Do deposits reduce cancellations, or only look like it? | Matched comparison with balance checks and caveats | Causal inference |
+| 5 | How many rooms to overbook? | Policy vs flat 5% rule, weekday and weekend, tested on a held-out period | Newsvendor, Monte Carlo simulation |
+| 6 | How sure are we? Can a manager use it? | Sensitivity charts, live dashboard, AI draft vs designed final | Sensitivity analysis, Streamlit, deployment |
+| 7 | Can someone act on it? | 2-page memo, README, LinkedIn post, resume line | Decision writing |
+
+Full explanation of every concept: the "Hotel Overbooking: Project Guide" doc.
 
 ## Day 1 broken into steps
 1. Setup (done)
